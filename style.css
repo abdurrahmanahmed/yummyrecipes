@@ -1,0 +1,436 @@
+:root{
+    --darkest:#111;
+    --darker:#222;
+    --dark:#333;
+    --main:#0c4;
+    --secondary:rgb(255, 204, 1);
+    --white:rgb(255, 255, 255);
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+::selection{
+    background-color: var(--secondary);
+    color: var(--darkest);
+}
+body{
+    background-color: rgb(20, 20, 20);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+
+}
+img{
+    width: 100%;
+}
+
+
+/* ************* start sidebar ************* */
+aside{
+    width: 300px;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    left: -240px;
+    top: 0;
+    bottom: 0;
+}
+aside .left ,aside .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+aside .fa-solid , aside .fa-brands{
+    font-size: larger;
+    transition: color .3s ease-in-out, scale .3s ease-in-out;
+}
+
+aside .left .fa-solid:hover , aside .left .fa-brands:hover{
+    color: var(--secondary);
+}
+aside .left {
+    padding: 1rem;
+    width: 240px;
+    background-color: var(--darkest);
+}
+aside .left .links{
+    overflow: hidden;
+}
+aside .left .links li{
+    position: relative;
+    top:100%;
+}
+aside .left .links a{
+    font-size: larger;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    display: block;
+    transition: background-color .3s ease-in-out;
+}
+aside .left .links a:hover{
+    background-color: var(--secondary);
+}
+aside .left .socials ul{
+    display: flex;
+    margin-bottom: 1rem;
+}
+aside .left .socials ul li {
+    margin: .5rem;
+}
+aside .right {
+    padding: 1.5rem .5rem;
+    width: 60px;
+    background-color: var(--secondary);
+    color: var(--darkest);
+}
+aside .right .logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: scale .3s ease-in-out,box-shadow .3s ease-in-out;
+}
+aside .right .logo:hover{
+    scale: 1.1;
+    box-shadow: var(--dark) 0px 0px 0px 1px;
+}
+aside .right .burger-menu .fa-solid{
+    font-size: 1.5rem;
+}
+aside .right  .share{
+    display: flex;
+    flex-direction: column;
+}
+aside .right  .share .fa-share-alt{
+    margin-top: 1rem ;
+}
+/* ************* end sidebar ************* */
+
+/* ************* start search inputs ************* */
+section #content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.search-inputs{
+    text-align: center;
+    padding: .5rem;
+    border-radius: .5rem;
+
+}
+.search-inputs input{
+    outline: var(--secondary) 1px solid;
+    font-size: large;
+    border-radius: .5rem;
+    padding: 1rem ;
+    border: none;
+    margin: .5rem;
+    background-color: var(--darkest);
+    color: var(--secondary);
+    text-transform: capitalize;
+}
+.search-inputs input:focus{
+    border: none;
+}
+
+/* ************* end search inputs ************* */
+
+/* ************* start categories ************* */
+section{
+    height: 100vh;
+    align-items: center;
+}
+
+section .container {
+    width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+section .container #content{
+    padding: 1rem;
+    max-width: 100%;
+    margin-left: 3rem;
+
+}
+
+section .container #categories  {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: .5rem;
+}
+section .container #categories .category{
+    padding: .8rem;
+    max-width: 25%;
+    min-width: 250px;
+}
+section .container #categories .category .content{
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: rgb(17, 17, 17);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+section .container #categories .category .hover-info{
+    background-color: rgba(255, 204, 1, 0.9);
+    color: var(--darkest);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 120%;
+    bottom: 0;
+    padding: 1rem;
+    transition: all 1s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section .container #categories .category .content:hover .hover-info{
+    top: 0;
+    bottom: 0;
+
+}
+section .container #categories .category .hover-info h2{
+    margin: .5rem auto;
+   
+}
+/* ************* end categories ************* */
+
+
+/* ************* start meal-details ************* */
+
+.meal-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.meal-details .left {
+    max-width: 400px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: larger;
+} 
+.meal-details .left h2{
+    margin: 2rem auto;
+    color: var(--secondary);
+}
+.meal-details h3{
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin: 1rem auto;
+    color: var(--secondary);
+}
+.meal-details p{
+    margin: .5rem auto;
+}
+.meal-details .details{
+    margin: 1.5rem 0 1.5rem 6rem;
+}
+.meal-details #areaName,.meal-details #categoryName{
+    cursor: pointer;
+}
+.meal-details span{
+    font-weight: bold;
+    color: var(--secondary);
+}
+.meal-details a{
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    margin: 1rem .5rem 0 0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition:color .3s ease-in-out,background-color .3s ease-in-out;
+    font-size: small;
+    border: solid red 1px;
+    background-color: var(--darkest);
+    color: red;
+}
+.meal-details .links{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.meal-details a:hover{
+    background-color: red;
+    color:white;
+}
+
+.meal-details .txt{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin-left: 5rem;
+}
+
+.meal-details .txt p{
+    background-color: var(--secondary);
+    padding: .5rem 2rem;
+    margin: .5rem;
+    color: var(--darkest);
+    border-radius: 2rem;
+    
+    
+}
+.meal-details .txt p::selection,form .contact-inputs input::selection{
+    background-color: var(--darkest);
+    color: var(--secondary);
+}
+/* ************* end meal-details ************* */
+
+/* ************* start area-content ************* */
+
+.area-content {
+    display: flex;
+    align-items: center;
+    transition: color .3s ease-in-out;
+}
+.area-content:hover{
+    color: var(--secondary);
+}
+.area-content h3{
+    margin-left: 1rem;
+}
+
+/* ************* end area-content ************* */
+
+/* ************* start ingredients ************* */
+
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 250px;
+}
+.ingredients i {
+    font-size: 3rem;
+    padding: 1rem;
+    color: var(--secondary);
+
+}
+.ingredients p{
+    height: 100px;
+    padding: 1rem;
+}
+/* ************* end ingredients ************* */
+
+/* ************* start form ************* */
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+}
+form h2{
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-top: 5rem;
+    font-size: 2rem;
+
+}
+form .contact-inputs{
+    margin: 2rem auto;
+    background-color: var(--darkest);
+    padding: 1rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+form .contact-inputs input{
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    background-color: var(--secondary);
+    color: var(--darkest);
+    border: none;
+    margin: 1rem;
+    min-width: 45%;
+}
+form .contact-inputs input:focus{
+    outline: none;
+}
+
+form button{
+    font-size: larger;
+    text-transform: uppercase;
+    padding: .5rem 1rem;
+    border: none;
+    background-color: var(--darkest);
+    color: var(--dark);
+    transition: background-color .3s ease-in-out,color .3s ease-in-out;
+}
+
+form .active{
+    cursor: pointer;
+    color: var(--darkest);
+    background-color: var(--secondary);
+}
+form .active:hover{
+    background-color: var(--darkest);
+    color: var(--secondary);
+}
+.alerts{
+    padding: 1rem;
+    background-color: var(--darkest);
+    margin-top: 2rem;
+    text-align: center;
+   
+}
+.alerts .txt{
+    display: flex;
+    flex-wrap: wrap;
+}
+.alerts h3{
+    color: crimson;
+    text-transform: uppercase;
+    margin: 2rem;
+    font-size: 2rem;
+}
+form .alerts p{
+    flex-grow: 1;
+    margin: .5rem ;
+    border: dashed 1px crimson;
+    padding: 1rem;
+    font-weight: lighter;
+    color: crimson;
+}
+form .alerts p span{
+    color: var(--secondary);
+    display: block;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+/* ************* end form ************* */
+.d-none{
+    display: none;
+}
